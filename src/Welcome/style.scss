@@ -1,0 +1,55 @@
+.welcome {
+  height: 400px;
+  background: url(/img/welcome_bg.jpg) center center no-repeat;
+  display: flex;
+  justify-content: center;
+
+  &__layout {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+  }
+
+  &__title, &__text {
+    text-align: center;
+  }
+
+  &__title {
+    font: 86px $fontBlackItalic;
+    color: #fff;
+    line-height: 1;
+
+    @include breakpoint($xs){
+      font-size: 55px;
+    }
+  }
+
+  &__text {
+    color: #ed7103;
+    font: 30px $fontBoldItalic;
+    margin: {
+      top: 30px;
+    };
+    line-height: 1.5;
+
+    @include breakpoint($xs){
+      font-size: 18px;
+    }
+  }
+
+  &__scroller {
+    align-self: center;
+    width: 31px;
+    height: 17px;
+    background: url(/img/scroller_bg.png) no-repeat;
+    margin: {
+      top: 50px;
+    };
+
+    a, > * {
+      display: block;
+      height: 100%;
+      text-indent: -9999px;
+    }
+  }
+}

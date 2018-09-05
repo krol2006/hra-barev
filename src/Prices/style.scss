@@ -1,0 +1,1031 @@
+@mixin tableCellReset {
+  &:nth-of-type(2){
+    @content;
+  }
+}
+
+.prices {
+  &__title {
+    color: #000;
+    font: 68px $fontBlackItalic;
+    text-align: center;
+    padding: 0 200px;
+    line-height: 1;
+
+    @include breakpoint($sm){
+      padding: 0 20px;
+    }
+
+    @include breakpoint($xs){
+      font-size: 30px;
+    }
+
+    &::after {
+      content: attr(data-subtitle);
+      font: 30px $fontBoldItalic;
+      display: inline-block;
+      background: url(/img/prices_subtitle_bg.png) right top no-repeat;
+      padding-right: 30px;
+
+      @include breakpoint($sm){
+        font-size: 24px;
+      }
+    }
+  }
+
+  &__subtitle {
+    font: 23px $fontBoldItalic;
+    text-align: center;
+    margin-bottom: 80px;
+    padding: {
+      left: 150px;
+      right: 150px;
+    };
+  }
+
+  &__intro {
+    background: #ed7103;
+    box-sizing: border-box;
+    padding: {
+      top: 57px;
+      bottom: 80px;
+    };
+
+    @include breakpoint($xs){
+      padding: {
+        top: 40px;
+      };
+    }
+  }
+
+  &__table {
+    max-width: 1200px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.75);
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+
+      @include breakpoint($xs){
+        display: flex;
+      }
+    }
+
+    thead {
+      @include breakpoint($xs){
+        display: none;
+      }
+    }
+
+    th {
+      background: -webkit-linear-gradient(45deg, #060606 20%, #303030 100%);
+      background: -o-linear-gradient(45deg, #060606 20%, #303030 100%);
+      background: linear-gradient(45deg, #060606 20%, #303030 100%);
+      height: 78px;
+      font: 23px $fontBoldItalic;
+      color: #fff;
+
+      @include breakpoint($xs){
+        display: flex;
+      }
+
+      &:nth-of-type(2) {
+        color: #999999;
+        font: 18px $font;
+      }
+    }
+
+    td {
+      background: #ececec;
+      background: -moz-linear-gradient(top,  #ececec 0%, #ffffff 100%);
+      background: -webkit-linear-gradient(top,  #ececec 0%,#ffffff 100%);
+      background: linear-gradient(to bottom,  #ececec 0%,#ffffff 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ececec', endColorstr='#ffffff',GradientType=0 );
+      text-align: center;
+      padding: {
+        top: 30px;
+        bottom: 30px;
+      };
+      border: 1px dashed #d4d4d4;
+
+      @include breakpoint($xs){
+        display: flex;
+        position: relative;
+        box-sizing: border-box;
+        padding-left: 50%;
+        justify-content: center;
+        padding-right: 5px;
+      }
+
+      &::before {
+        @include breakpoint($xs){
+          content: attr(data-label);
+          width: 50%;
+          position: absolute;
+          left: 0;
+          height: 100%;
+          top: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+
+    tr {
+      @include breakpoint($xs){
+        display: flex;
+        flex-flow: column nowrap;
+      }
+
+      &:first-of-type {
+        td {
+          color: #ed7103;
+          font: 18px $fontBoldItalic;
+          border-top: 0;
+          line-height: 1;
+
+          @include breakpoint($xs){
+            font-size: 14px;
+          }
+
+          @include tableCellReset {
+            color: #999999;
+            font: 18px $font;
+
+            @include breakpoint($xs){
+              color: #ed7103;
+              font: 14px $fontBoldItalic;
+            }
+          }
+        }
+      }
+
+      &:nth-of-type(2) {
+        td {
+          @include breakpoint($xs){
+            color: #ed7103;
+            font: 14px $fontBoldItalic;
+          }
+
+          span {
+            display: block;
+
+            &:first-of-type {
+              font: 23px $fontBoldItalic;
+            }
+
+            &:last-of-type {
+              color: #b3b3b3;
+              font: 18px $fontBoldItalic;
+            }
+          }
+
+          &:nth-of-type(2) {
+            span {
+              &:first-of-type {
+                color: #999999;
+                font: 18px $font;
+
+                @include breakpoint($xs){
+                  font-size: 14px;
+                }
+              }
+
+              &:last-of-type {
+                font: 16px $font;
+
+                @include breakpoint($xs){
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &:nth-of-type(3) {
+        td {
+          font: 23px $fontBoldItalic;
+
+          @include breakpoint($xs){
+            color: #ed7103;
+            font: 14px $fontBoldItalic;
+          }
+
+          @include tableCellReset {
+            color: #999999;
+            font: 18px $font;
+
+            @include breakpoint($xs){
+              color: #ed7103;
+              font: 14px $fontBoldItalic;
+            }
+          }
+        }
+      }
+
+      &:nth-of-type(4) {
+        td {
+          color: #000;
+          font: 16px $font;
+          padding: {
+            left: 40px;
+            right: 40px;
+          };
+          border-bottom: 0;
+
+
+
+          @include breakpoint($xs){
+            color: #ed7103;
+            font: 14px $fontBoldItalic;
+            padding: {
+              left: 50%;
+              right: 5px;
+            };
+          }
+
+          @include tableCellReset {
+            color: #999999;
+            font: 18px $font;
+
+            @include breakpoint($xs){
+              color: #ed7103;
+              font: 14px $fontBoldItalic;
+            }
+          }
+        }
+      }
+
+      td:first-of-type {
+        border-left: 0;
+      }
+
+      td:last-of-type {
+        border-right: 0;
+      }
+    }
+  }
+
+  &__info {
+    margin: {
+      top: 111px;
+    };
+
+    @include breakpoint($xs){
+      margin-top: 50px;
+    }
+
+    &__list {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+
+      @include breakpoint($xs){
+        flex-flow: column nowrap;
+        align-items: center;
+        overflow: hidden;
+      }
+    }
+
+    &__item {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      @include breakpoint($xs){
+        margin: 20px 0;
+        text-align: center;
+      }
+
+      &:last-of-type {
+        @include breakpoint($xs){
+          margin-bottom: 0;
+        }
+      }
+
+      &::after {
+        content: "+";
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -80px;
+        font: 30px $fontBold;
+
+        @include breakpoint($sm){
+          display: none;
+        }
+      }
+
+      &:first-of-type::after {
+        content: "=";
+      }
+
+      &:last-of-type::after {
+        display: none;
+      }
+
+      p {
+        font: 30px $fontBoldItalic;
+
+        @include breakpoint($sm){
+          font-size: 23px;
+        }
+      }
+
+      span {
+        display: block;
+        font: 23px $fontBoldItalic;
+        margin: {
+          top: 38px;
+        };
+        line-height: 1;
+
+        @include breakpoint($xs){
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  &__enter {
+    background: url(/img/prices_enter_bg.jpg) no-repeat;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    height: 339px;
+
+    @include breakpoint($md){
+      height: 260px;
+    }
+
+    @include breakpoint($sm){
+      height: auto;
+      overflow: hidden;
+    }
+
+    &__layout {
+      height: 100%;
+      background: url(/img/prices_enter_layout_bg.png) left center no-repeat;
+      position: relative;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+
+      @include breakpoint($sm){
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 50px 0;
+        background: none;
+      }
+
+      &::before {
+        content: "";
+        background: rgba(0, 0, 0, .8);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 100%;
+        width: 100%;
+
+        @include breakpoint($sm){
+          display: none;
+        }
+      }
+    }
+
+    &__text {
+      color: #fff;
+      font: 30px $fontBoldItalic;
+
+      @include breakpoint($sm){
+        font-size: 26px;
+      }
+
+      span {
+        display: block;
+        color: #ed7103;
+        font: 86px $fontBlackItalic;
+
+        @include breakpoint($sm){
+          font-size: 52px;
+        }
+      }
+    }
+
+    &__buttons {
+      padding-right: 110px;
+
+      @include breakpoint($sm){
+        padding-right: 10px;
+        margin-top: 20px;
+      }
+
+      a {
+        display: block;
+        background: #ed7103;
+        color: #fff;
+        text-decoration: none;
+        height: 80px;
+        font: 30px $fontBoldItalic;
+        box-sizing: border-box;
+        padding: {
+          left: 25px;
+          right: 25px;
+        };
+        line-height: 80px;
+
+        @include breakpoint($xs){
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  &__conveniences {
+    background: #ed7103;
+    box-sizing: border-box;
+    padding: {
+      top: 57px;
+      bottom: 77px;
+    };
+
+    &__list {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      margin: {
+        top: 68px;
+      };
+
+      @include breakpoint($md){
+        flex-wrap: wrap;
+      }
+
+      @include breakpoint($xs){
+        flex-flow: column nowrap;
+      }
+    }
+
+    &__item {
+      flex: 0 1 158px;
+      position: relative;
+      box-shadow: 0 0 5px 0 rgba(0,0,0,0.75);
+
+      @include breakpoint($md){
+        width: 33.3333%;
+        max-width: 158px;
+        min-width: 158px;
+        margin: 0 8% 6%;
+        flex: 0 1 33.3333%;
+      }
+
+      @include breakpoint($sm){
+        width: 50%;
+        max-width: 158px;
+        min-width: 158px;
+        margin: 0 14% 6%;
+        -ms-flex: 0 1 33.3333%;
+        flex: 0 1 50%;
+      }
+
+      @include breakpoint($xs){
+        margin: 0 auto 20px;
+        flex: 0 1 auto;
+      }
+
+      &__info {
+        &__icon {
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          border: 2px solid #999999;
+          border-radius: 40px;
+          text-align: center;
+          right: 12px;
+          top: 12px;
+          color: #999999;
+          font: 16px $fontBoldItalic;
+          text-indent: -1px;
+          cursor: pointer;
+          line-height: 20px;
+        }
+
+        &__text {
+          color: #808080;
+          font: 14px $font;
+          width: 204px;
+          background-color: #fff;
+          box-sizing: border-box;
+          padding: 20px;
+          position: absolute;
+          top: 58px;
+          left: 23px;
+          box-shadow: 0 0 13px 0 rgba(0,0,0,0.59);
+          opacity: 0;
+          visibility: hidden;
+          z-index: 200;
+          transition: all .2s;
+        }
+
+        &__helper {
+          position: absolute;
+          background: #fff;
+          display: block;
+          width: 25px;
+          height: 25px;
+          top: -8px;
+          left: 0;
+          right: 0;
+          transform: rotate(-45deg);
+          transform-origin: center top;
+          margin: auto;
+          box-shadow: 3px -3px 3px 1px rgba(0,0,0,0.2);
+          z-index: 9;
+        }
+
+        &:hover &__text {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      &__image {
+        height: 155px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &__text {
+        height: 72px;
+        background: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        p {
+          color: #ed7103;
+          font: 23px $fontBoldItalic;
+          line-height: 1.2;
+        }
+
+        span {
+          display: block;
+          font: 16px $fontBoldItalic;
+          color: #fff;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  &__services {
+    height: 491px;
+    background: url(/img/prices_services_bg.jpg) no-repeat;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, .9);
+      z-index: 5;
+    }
+
+    > * > * {
+      position: relative;
+      z-index: 10;
+    }
+
+    &__title {
+      font: 68px $fontBlackItalic;
+      color: #ed7103;
+      text-align: center;
+      margin: {
+        top: 66px;
+      };
+      line-height: 1;
+
+      @include breakpoint($xs){
+        font-size: 44px;
+      }
+    }
+
+    &__text {
+      color: #fff;
+      text-align: center;
+      font: 18px $font;
+      max-width: 675px;
+      margin: {
+        left: auto;
+        right: auto;
+        top: 40px;
+      };
+
+      @include breakpoint($xs){
+        font-size: 14px;
+      }
+    }
+
+    &__links {
+      &__list {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+      }
+
+      &__item {
+        flex: 0 1 25%;
+        text-align: center;
+        margin: {
+          top: 62px;
+        };
+
+        @include breakpoint($xs){
+          flex: 0 1 50%;
+        }
+      }
+
+      &__link {
+        color: #ed7103;
+        text-decoration: none;
+        font: 23px $fontBoldItalic;
+        line-height: 1;
+
+        @include breakpoint($xs){
+          font-size: 14px;
+        }
+
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  &__bonuses {
+    background: #ed7103;
+    box-sizing: border-box;
+    padding: {
+      top: 56px;
+      bottom: 42px;
+    };
+
+    &__list {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+
+      @include breakpoint($sm){
+        justify-content: center;
+      }
+    }
+
+    &__item {
+      min-height: 265px;
+      flex: 0 1 560px;
+      box-shadow: 0 0 5px 0 rgba(0,0,0,0.75);
+      margin: {
+        bottom: 42px;
+      };
+      box-sizing: border-box;
+      padding-bottom: 72px;
+      position: relative;
+
+      @include breakpoint($md){
+        flex: 0 1 480px;
+      }
+
+      @include breakpoint($sm){
+        flex: 0 1 560px;
+      }
+
+      @include breakpoint($xs){
+        flex: 0 1 auto;
+      }
+
+      &__layout {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        min-height: 100%;
+
+        @include breakpoint($xs){
+          flex-flow: column nowrap;
+        }
+      }
+
+      &__image {
+        min-width: 180px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        > img {
+          @include breakpoint($xs){
+            margin: 20px 0;
+          }
+        }
+      }
+
+      &__content {
+        background: #e6e6e6;
+        background: -moz-linear-gradient(top,  #e6e6e6 0%, #ffffff 100%);
+        background: -webkit-linear-gradient(top,  #e6e6e6 0%,#ffffff 100%);
+        background: linear-gradient(to bottom,  #e6e6e6 0%,#ffffff 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e6e6', endColorstr='#ffffff',GradientType=0 );
+        box-sizing: border-box;
+        padding: {
+          left: 30px;
+          right: 30px;
+        };
+
+        @include breakpoint($xs){
+          text-align: center;
+          padding-bottom: 30px;
+        }
+      }
+
+      &__title {
+        font: 30px $fontBoldItalic;
+        margin: {
+          top: 25px;
+        };
+        line-height: 1;
+      }
+
+      &__text {
+        font: 16px $font;
+        margin: {
+          top: 15px;
+        };
+
+        a {
+          color: #ed7103;
+          font: 16px $fontBold;
+          text-decoration: none;
+          white-space: nowrap;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      &__price {
+        height: 72px;
+        background: #000;
+        color: #ed7103;
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        font: 30px $fontBoldItalic;
+        line-height: 72px;
+
+        span {
+          color: #fff;
+        }
+      }
+
+      &--text {
+        box-shadow: none;
+        box-sizing: border-box;
+        padding: {
+          top: 25px;
+          left: 28px;
+        };
+
+        @include breakpoint($sm){
+          text-align: justify;
+          padding: {
+            left: 0;
+            bottom: 0;
+          };
+        }
+
+        > *, p {
+          font: 18px $font;
+        }
+      }
+    }
+  }
+
+  &__games {
+    height: 491px;
+    background: url(/img/prices_games_bg.jpg) no-repeat;
+    position: relative;
+    overflow: hidden;
+
+    @include breakpoint($sm){
+      height: 580px;
+    }
+
+    @include breakpoint($xs){
+      height: auto;
+      padding-bottom: 30px;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, .9);
+      z-index: 5;
+    }
+
+    > * > * {
+      position: relative;
+      z-index: 10;
+    }
+
+    &__title {
+      color: #ed7103;
+      text-align: center;
+      font: 68px $fontBlackItalic;
+      margin: {
+        top: 70px;
+      };
+      line-height: 1;
+
+      @include breakpoint($xs){
+        font-size: 38px;
+        margin-top: 30px;
+      }
+    }
+
+    &__text {
+      text-align: center;
+      color: #fff;
+      margin: {
+        top: 45px;
+      };
+      font: 18px $font;
+      line-height: 1.5;
+
+      @include breakpoint($xs){
+        font-size: 14px;
+      }
+
+      a {
+        color: #ed7103;
+        font: 18px $fontBoldItalic;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &__popup {
+    position: absolute;
+    width: 365px;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: translateY(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+    z-index: 20;
+
+    &.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &__title {
+      height: 65px;
+      color: #ed7103;
+      font: 23px $fontBoldItalic;
+      text-align: center;
+      background: #e6e6e6;
+      line-height: 65px;
+    }
+
+    &__close {
+      position: absolute;
+      display: block;
+      width: 18px;
+      height: 18px;
+      background: url(/img/prices_popup_close_bg.png) no-repeat;
+      top: -9px;
+      right: -9px;
+    }
+
+    &__table {
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        border: 0;
+      }
+
+      tr {
+        background: #ececec;
+        background: -moz-linear-gradient(top,  #ececec 0%, #ffffff 100%);
+        background: -webkit-linear-gradient(top,  #ececec 0%,#ffffff 100%);
+        background: linear-gradient(to bottom,  #ececec 0%,#ffffff 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ececec', endColorstr='#ffffff',GradientType=0 );
+        border: 0;
+
+        td {
+          border: 0;
+          font: 16px $font;
+          vertical-align: top;
+          padding: {
+            top: 20px;
+            bottom: 18px;
+          };
+
+          p {
+            margin-bottom: 4px;
+          }
+
+          &:first-of-type {
+            padding: {
+              left: 20px;
+            }
+          }
+
+          &:last-of-type {
+            text-align: right;
+            padding: {
+              right: 20px;
+            };
+            color: #ed7103;
+          }
+        }
+      }
+    }
+  }
+
+  &__terms {
+    background: #ed7103;
+    box-sizing: border-box;
+    padding-bottom: 78px;
+    overflow: hidden;
+
+    &__title {
+      font: 23px $fontBoldItalic;
+      text-align: center;
+      margin: {
+        top: 65px;
+      };
+      line-height: 1;
+
+      @include breakpoint($xs){
+        margin-top: 30px;
+      }
+    }
+
+    &__text {
+      font: 18px $font;
+      text-align: center;
+      margin: {
+        top: 65px;
+      };
+
+      @include breakpoint($xs){
+        margin-top: 30px;
+        font-size: 14px;
+      }
+
+      a {
+        font: 18px $fontBoldItalic;
+        color: #fff;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+$md: "(max-width: 1280px)";
+$sm: "(max-width: 1000px)";
+$xs: "(max-width: 767px)";
+
+.container {
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  @include breakpoint($md){
+    max-width: 1000px;
+    padding: 0 10px;
+  }
+
+  @include breakpoint($sm){
+    max-width: 768px;
+  }
+
+  @include breakpoint($xs){
+    max-width: 100%;
+    overflow: hidden;
+    padding: 0;
+  }
+}

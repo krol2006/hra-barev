@@ -1,0 +1,59 @@
+.contact-us {
+  height: 340px;
+  background: url(/img/contact-us_bg.jpg) center center no-repeat;
+  background-size: 100% 100%;
+
+  @include breakpoint($xs){
+    height: auto;
+  }
+
+  &__layout {
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    @include breakpoint($xs){
+      flex-flow: column nowrap;
+    }
+  }
+
+  &__text {
+    color: #ed7103;
+    font: 68px $fontBlackItalic;
+    line-height: 1;
+
+    @include breakpoint($md){
+      font-size: 63px;
+    }
+
+    @include breakpoint($xs){
+      font-size: 35px;
+      box-sizing: border-box;
+      padding-left: 10px;
+      padding-top: 40px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__buttons {
+    min-width: 300px;
+    height: 80px;
+
+    @include breakpoint($xs){
+      margin-bottom: 40px;
+    }
+
+    > *, a {
+      display: block;
+      height: 100%;
+      background: #ed7103;
+      text-align: center;
+      text-decoration: none;
+      font: 30px $fontBoldItalic;
+      color: #ffffff;
+      line-height: 80px;
+    }
+  }
+}

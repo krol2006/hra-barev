@@ -1,0 +1,461 @@
+.reservation {
+  background: #ee7103;
+  box-sizing: border-box;
+  padding: {
+    top: 60px;
+  };
+
+  @include breakpoint($xs){
+    padding-top: 40px;
+  }
+
+  &__list {
+    max-width: 1135px;
+    margin: {
+      left: auto;
+      right: auto;
+    };
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    @include breakpoint($sm){
+      justify-content: center;
+    }
+  }
+
+  &__item {
+    max-width: 537px;
+    position: relative;
+    margin: {
+      bottom: 60px;
+    };
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.75);
+
+    @include breakpoint($md){
+      max-width: 480px;
+      margin-bottom: 20px;
+    }
+
+    @include breakpoint($sm){
+      max-width: 540px;
+      margin-bottom: 60px;
+    }
+
+    @include breakpoint($xs){
+      max-width: 320px;
+      margin-bottom:40px;
+    }
+  }
+
+  &__title {
+    font: 30px $fontBoldItalic;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 80px;
+    box-sizing: border-box;
+    padding-left: 24px;
+    background: rgba(0, 0, 0, .75);
+    line-height: 80px;
+    z-index: 10;
+
+    @include breakpoint($xs){
+      font-size: 18px;
+    }
+
+    &::before {
+      content: attr(data-number);
+      display: block;
+      font: 16px $fontBoldItalic;
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      box-sizing: border-box;
+      border: 2px solid #fff;
+      text-indent: -1px;
+      color: #fff;
+      border-radius: 30px;
+      top: 24px;
+      right: 24px;
+      text-align: center;
+      line-height: 25px;
+    }
+  }
+
+  &__image {
+    height: 300px;
+    position: relative;
+
+    @include breakpoint($xs){
+      height: 180px;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 179px;
+      background: url(/img/reservation_image_bg.png) repeat-x;
+      z-index: 2;
+    }
+
+    > img {
+      width: 100%;
+      max-height: 100%;
+    }
+
+    &__text {
+      position: absolute;
+      left: 24px;
+      bottom: 24px;
+      font: 18px $font;
+      color: #fff;
+      z-index: 10;
+
+      @include breakpoint($xs){
+        bottom: 45px;
+        width: 100%;
+        left: 0;
+        right: 0;
+        text-align: center;
+      }
+
+      br {
+        @include breakpoint($xs){
+          display: none;
+        }
+      }
+    }
+
+    &__icons {
+      display: flex;
+      flex-flow: row nowrap;
+      position: absolute;
+      right: 23px;
+      bottom: 25px;
+      z-index: 10;
+
+      @include breakpoint($xs){
+        bottom: 13px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        justify-content: center;
+      }
+
+      > * {
+        display: block;
+        width: 22px;
+        height: 20px;
+        background: url(/img/reservation_image_icons_bg.png) no-repeat;
+        margin: {
+          right: 27px;
+        };
+
+        @include breakpoint($xs){
+          margin-right: 15px;
+        }
+
+        &:last-of-type {
+          margin: {
+            right: 0;
+          };
+        }
+      }
+    }
+
+    &__icon {
+      &--wc {
+        background-position: center -31px;
+      }
+
+      &--wifi {
+        background-position: center -67px;
+      }
+
+      &--parking {
+        background-position: center -104px;
+      }
+
+      &--bus {
+        background-position: center -141px;
+      }
+
+      &--temperature {
+        background-position: center -179px;
+      }
+
+      &--light {
+        background-position: center bottom;
+      }
+
+      &--inactive {
+        opacity: .4;
+        filter: grayscale(100%);
+      }
+    }
+  }
+
+  &__gallery {
+    display: flex;
+    flex-flow: row nowrap;
+
+    &__item {
+      width: calc(100%/3);
+      height: 100px;
+
+      @include breakpoint($xs){
+        height: 65px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &__content {
+    min-height: 288px;
+    background: #fff;
+    box-sizing: border-box;
+    padding: {
+      left: 24px;
+      right: 24px;
+      top: 20px;
+    }
+
+    @include breakpoint($xs){
+      padding: {
+        left: 10px;
+        right: 10px;
+        top: 10px;
+      };
+      overflow: hidden;
+    }
+
+    &--primary {
+      font: 18px $font;
+
+      @include breakpoint($xs){
+        font-size: 14px;
+      }
+    }
+
+    &--secondary {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      margin: {
+        top: 19px;
+      };
+      padding-right: 19px;
+
+      ul {
+        li {
+          color: #ed7103;
+          font: 16px $font;
+
+          @include breakpoint($xs){
+            font-size: 14px;
+          }
+
+          &::before {
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: #000;
+            vertical-align: middle;
+            margin: {
+              right: 14px;
+              top: -1px;
+            };
+            border-radius: 15px;
+          }
+        }
+      }
+
+      p {
+        color: #999999;
+        font: 16px $font;
+        position: relative;
+        box-sizing: border-box;
+        padding: {
+          top: 52px;
+        };
+
+        @include breakpoint($xs){
+          text-align: center;
+        }
+
+        &::before {
+          content: "";
+          display: block;
+          height: 45px;
+          width: 38px;
+          background: url(/img/reservation_pointer_bg.png) center center no-repeat;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+        }
+      }
+    }
+
+    &__buttons {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      right: 24px;
+      margin: auto;
+      height: 80px;
+
+      @include breakpoint($xs){
+        position: relative;
+        bottom: inherit;
+        width: 100%;
+        left: 0;
+        right: 0;
+        margin-top: 30px;
+        height: 50px;
+      }
+
+      a {
+        display: block;
+        height: 100%;
+        font: 23px $fontBoldItalic;
+        text-decoration: none;
+        color: #fff;
+        background: #ed7103;
+        box-sizing: border-box;
+        padding: {
+          left: 29px;
+        };
+        line-height: 80px;
+
+        @include breakpoint($md){
+          font-size: 21px;
+          padding-left: 15px;
+        }
+
+        @include breakpoint($sm){
+          font-size: 23px;
+          padding-left: 29px;
+        }
+
+        @include breakpoint($xs){
+          font-size: 14px;
+          padding: {
+            left: 10px;
+          };
+          line-height: 50px;
+        }
+
+        span {
+          display: block;
+          height: 100%;
+          position: absolute;
+          right: 0;
+          top: 0;
+          box-sizing: border-box;
+          background: #000;
+          color: #ed7103;
+          padding: {
+            left: 29px;
+            right: 29px;
+          };
+        }
+      }
+    }
+  }
+
+  &__icons {
+    margin: {
+      top: 30px;
+      left: auto;
+      right: auto;
+      bottom: 125px;
+    };
+    max-width: 1075px;
+
+    @include breakpoint($xs){
+      margin-bottom: 20px;
+    }
+
+    &__list {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+
+      @include breakpoint($xs){
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+    }
+
+    &__item {
+      color: #000;
+      font-size: 18px;
+      max-width: 105px;
+      text-align: center;
+      box-sizing: border-box;
+      padding: {
+        top: 70px;
+      };
+      position: relative;
+
+      @include breakpoint($xs){
+        font-size: 14px;
+        margin-bottom: 45px;
+        width: 33%;
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        width: 43px;
+        height: 42px;
+        background: url(/img/reservation_icons_bg.png) center top no-repeat;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+
+      &--wc::before {
+        background-position: center -67px;
+      }
+
+      &--wifi::before {
+        background-position: center -134px;
+      }
+
+      &--parking::before {
+        background-position: center -213px;
+      }
+
+      &--bus::before {
+        background-position: center -296px;
+      }
+
+      &--temperature::before {
+        background-position: center -380px;
+      }
+
+      &--light::before {
+        background-position: center bottom 1px;
+      }
+    }
+  }
+}

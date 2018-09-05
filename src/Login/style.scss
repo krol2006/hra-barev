@@ -1,0 +1,64 @@
+.login {
+  background: #ed7103;
+  overflow: hidden;
+  min-height: 100vh;
+
+  &__layout {
+    width: 400px;
+    margin: {
+      left: auto;
+      right: auto;
+      top: 65px;
+    };
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.75);
+    background: #fff;
+    overflow: hidden;
+
+    @include breakpoint($xs){
+      max-width: 100%;
+    }
+  }
+
+  &__title {
+    height: 80px;
+    background: #000 url(/img/login_icon_bg.png) left 32px center no-repeat;
+    text-align: center;
+    color: #fff;
+    font: 30px $fontBoldItalic;
+    line-height: 80px;
+  }
+
+  &__social {
+    box-sizing: border-box;
+    padding: 23px 25px;
+    border-bottom: 2px solid #eeeeee;
+
+    a {
+      height: 50px;
+      font: 18px $fontBoldItalic;
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+      background: #475993 url(/img/facebook_icon_bg2.png) left 15px center no-repeat;
+      line-height: 50px;
+    }
+  }
+
+  &__links {
+    margin: 25px 25px 27px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    a {
+      font: 12px $font;
+      color: #ed7103;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

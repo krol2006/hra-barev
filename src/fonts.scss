@@ -1,0 +1,48 @@
+@font-face {
+  src: url('~/static/media/fonts/Roboto-Regular.ttf');
+  font-family: 'Roboto';
+}
+
+@font-face {
+  src: url('~/static/media/fonts/Roboto-Black.ttf');
+  font-family: 'RobotoBlack';    
+}
+
+@font-face {
+  src: url('~/static/media/fonts/Roboto-Bold.ttf');
+  font-family: 'RobotoBold';
+}
+
+@font-face {
+  src: url('~/static/media/fonts/Roboto-Light.ttf');
+  font-family: 'RobotoLight';
+}
+
+@font-face {
+  src: url("~/static/media/fonts/Roboto-Italic.ttf");
+  font-family: 'RobotoItalic';
+}
+
+@font-face {
+  src: url("~/static/media/fonts/Roboto-BlackItalic.ttf");
+  font-family: 'RobotoBlackItalic';
+}
+
+@font-face {
+  src: url("~/static/media/fonts/Roboto-BoldItalic.ttf");
+  font-family: 'RobotoBoldItalic';
+}
+
+@font-face {
+  src: url("~/static/media/fonts/Roboto-LightItalic.ttf");
+  font-family: 'RobotoLightItalic';
+}
+
+$font: "Roboto", sans-serif;
+$fontBlack: "RobotoBlack", sans-serif;
+$fontBold: "RobotoBold", sans-serif;
+$fontLight: "RobotoLight", sans-serif;
+$fontItalic: "RobotoItalic", sans-serif;
+$fontBlackItalic: "RobotoBlackItalic", sans-serif;
+$fontBoldItalic: "RobotoBoldItalic", sans-serif;
+$fontLightItalic: "RobotoLightItalic", sans-serif;

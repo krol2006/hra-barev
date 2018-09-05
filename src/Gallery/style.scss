@@ -1,0 +1,58 @@
+.gallery {
+  position: relative;
+
+  &__list {
+    background: #000;
+    padding: {
+      top: 5px;
+      bottom: 400px;
+    };
+    box-sizing: border-box;
+    position: relative;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 400px;
+      height: 215px;
+      box-shadow: inset 0px -96px 179px 0px rgba(0,0,0,0.89);
+
+      left: 0;
+      right: 0;
+      width: 100%;
+    }
+  }
+
+  &__item {
+    img {
+      box-sizing: border-box;
+      border:{
+        top: 8px solid transparent;
+        bottom: 8px solid transparent;
+        left: 8px solid transparent;
+        right: 8px solid transparent;
+      }
+    }
+  }
+
+  &__more {
+    position: absolute;
+    bottom: 180px;
+    left: 0;
+    right: 0;
+    text-align: center;
+
+    a {
+      color: #fff;
+      font: 18px $fontBoldItalic;
+      text-decoration: none;
+      display: inline-block;
+      box-sizing: border-box;
+      padding: {
+        bottom: 28px;
+      };
+      background: url(/img/gallery_more_bg.png) center bottom no-repeat;
+    }
+  }
+}

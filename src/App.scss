@@ -1,0 +1,58 @@
+@import "./mixins.scss";
+@import "./container.scss";
+@import "./fonts.scss";
+@import "./forms.scss";
+@import '~slick-carousel/slick/slick.css';
+@import "Action/style.scss";
+@import "Home/style.scss";
+@import "Header/style.scss";
+@import "Footer/style.scss";
+@import "Welcome/style.scss";
+@import "Map/style.scss";
+@import "Reservation/style.scss";
+@import "Contact/style.scss";
+@import "ContactUs/style.scss";
+@import "Services/style.scss";
+@import "About/style.scss";
+@import "Gallery/style.scss";
+@import "Prices/style.scss";
+@import "Calendar/style.scss";
+@import "Details/style.scss";
+@import "Private/style.scss";
+@import "Gifts/style.scss";
+@import "GiftApproved/style.scss";
+@import "Breadcrumbs/style.scss";
+@import "Corporate/style.scss";
+@import "School/style.scss";
+@import "Public/style.scss";
+@import "Login/style.scss";
+@import "Registration/style.scss";
+@import "Check/style.scss";
+@import "Profile/style.scss";
+@import "Steps/style.scss";
+@import "Voucher/style.scss";
+@import "Comments/style.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  outline: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font: inherit;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font: 14px $font;
+}
+
+label {
+  user-select: none;
+}

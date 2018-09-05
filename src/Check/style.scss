@@ -1,0 +1,21 @@
+.check {
+  background: #ed7103;
+  overflow: hidden;
+
+  &__layout {
+    width: 400px;
+    margin: 0 auto 40px;
+    background: #fff;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.75);
+    overflow: hidden;
+  }
+
+  &__title {
+    height: 80px;
+    background: #000 url(/img/login_icon_bg.png) left 24px center no-repeat;
+    text-align: center;
+    color: #fff;
+    font: 30px $fontBoldItalic;
+    line-height: 80px;
+  }
+}

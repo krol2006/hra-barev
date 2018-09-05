@@ -1,0 +1,414 @@
+.action {
+  background: #ed7103;
+  overflow: hidden;
+
+  &__layout {
+    margin: {
+      top: 66px;
+      bottom: 65px;
+    }
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.75);
+  }
+
+  &__title {
+    height: 80px;
+    background: #048490 url(/img/action_title_bg.png) left 30px center no-repeat;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    font: 30px $fontBoldItalic;
+    line-height: 80px;
+
+    @include breakpoint($xs){
+      font-size: 18px;
+      background-image: none;
+    }
+
+    &::after {
+      content: attr(data-date);
+      color: #fff;
+      display: inline-block;
+      position: absolute;
+      right: 40px;
+      text-align: right;
+      font: 30px $fontBoldItalic;
+      top: 50%;
+      transform: translateY(-50%);
+      line-height: 1;
+
+      @include breakpoint($xs){
+        font-size: 14px;
+        top: 15px;
+        left: 0;
+        right: 0;
+        text-align: center;
+      }
+    }
+  }
+
+  &__block {
+    min-height: 301px;
+    overflow: hidden;
+
+    @include breakpoint($xs){
+      min-height: 0;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-flow: row nowrap;
+
+    @include breakpoint($xs){
+      flex-flow: column nowrap;
+    }
+  }
+
+  &--left, &--right {
+    width: 50%;
+
+    @include breakpoint($xs){
+      width: 100%;
+    }
+  }
+
+  &__list {
+    width: 100%;
+
+    &__item {
+      height: 43px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      background: #eaeaea;
+      background: -moz-linear-gradient(top,  #eaeaea 0%, #ffffff 100%);
+      background: -webkit-linear-gradient(top,  #eaeaea 0%,#ffffff 100%);
+      background: linear-gradient(to bottom,  #eaeaea 0%,#ffffff 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaeaea', endColorstr='#ffffff',GradientType=0 );
+      -webkit-box-shadow: inset 0 -2px 20px 0 rgba(0, 0, 0, 0.1);
+      box-shadow: inset 0 -2px 20px 0 rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      padding: {
+        left: 30px;
+        right: 30px;
+      }
+
+      @include breakpoint($sm){
+        padding: {
+          left: 10px;
+          right: 10px;
+        };
+      }
+
+      span {
+        font: 16px $font;
+        line-height: 43px;
+
+        @include breakpoint($xs){
+          font-size: 14px;
+        }
+
+        &:last-of-type {
+          color: #ed7103;
+        }
+
+        a {
+          color: #ed7103;
+          font: 16px $fontBoldItalic;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  &__image {
+    position: relative;
+
+    img {
+      display: block;
+
+      @include breakpoint($xs){
+        width: 100%;
+      }
+    }
+
+    a {
+      background: #ed7103;
+      height: 80px;
+      width: 350px;
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      margin: auto;
+      transform: translateY(-50%);
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      font: 23px $fontBoldItalic;
+      box-shadow: 0 0 28px 0 rgba(0,0,0,0.75);
+      line-height: 80px;
+    }
+  }
+
+  &__prices {
+    height: 100%;
+
+    &__list {
+      height: 165px;
+      background: linear-gradient(45deg, #060606 20%, #303030 100%);
+      width: 100%;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+    }
+
+    &__item {
+      height: 57.5px;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+      padding: {
+        left: 30px;
+        right: 30px;
+      };
+
+      @include breakpoint($sm){
+        padding: {
+          left: 10px;
+          right: 10px;
+        };
+      }
+
+      > * {
+        line-height: 1;
+
+        &:first-of-type {
+          font: 16px $font;
+          color: inherit;
+
+        }
+
+        &:last-of-type {
+          font: 30px $fontBoldItalic;
+        }
+
+        span {
+          font: 16px $fontItalic;
+        }
+      }
+
+      &--primary {
+        color: #fff;
+      }
+
+      &--secondary {
+        color: #ed7103;
+      }
+    }
+
+    &__info {
+      height: 43px;
+      border-bottom: 1px solid #464646;
+      background: linear-gradient(45deg, #060606 20%, #303030 100%);
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+      padding: {
+        left: 30px;
+        right: 30px;
+      };
+
+      @include breakpoint($sm){
+        padding: {
+          left: 10px;
+          right: 10px;
+        };
+      }
+
+      p {
+        color: #666666;
+        font: 16px $font;
+        line-height: 1;
+
+        @include breakpoint($sm){
+          font-size: 14px;
+        }
+      }
+
+      a {
+        color: #ed7103;
+        text-decoration: none;
+        font: 16px $fontBoldItalic;
+        line-height: 1;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &__note {
+    color: #000;
+    box-sizing: border-box;
+    padding: {
+      left: 30px;
+      right: 30px;
+      bottom: 33px;
+    };
+    background: #eaeaea;
+    background: -moz-linear-gradient(top,  #eaeaea 0%, #ffffff 100%);
+    background: -webkit-linear-gradient(top,  #eaeaea 0%,#ffffff 100%);
+    background: linear-gradient(to bottom,  #eaeaea 0%,#ffffff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaeaea', endColorstr='#ffffff',GradientType=0 );
+    overflow: hidden;
+
+    @include breakpoint($sm){
+      padding: {
+        left: 10px;
+        right: 10px;
+      };
+    }
+
+    &--dark {
+      color: #666666;
+      background: linear-gradient(45deg, #060606 20%, #303030 100%);
+    }
+
+    p {
+      font: 16px $font;
+      color: inherit;
+
+      @include breakpoint($xs){
+        font-size: 14px;
+      }
+
+      &:first-of-type {
+        margin: {
+          top: 19px;
+          bottom: 12px;
+        }
+        line-height: 1;
+      }
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-flow: row nowrap;
+
+    > *, a {
+      height: 79px;
+      display: block;
+      width: 50%;
+      flex: 0 1 50%;
+      color: #fff;
+      font: 23px $fontBoldItalic;
+      text-decoration: none;
+      text-align: center;
+      box-sizing: border-box;
+      padding-top: 26px;
+      line-height: 1;
+
+      @include breakpoint($xs){
+        padding-top: 0;
+        font-size: 18px;
+        line-height: 79px;
+      }
+
+      &:first-of-type {
+        background: #ed7103;
+      }
+
+      &:last-of-type {
+        background: #475993;
+
+        &::after {
+          content: "";
+          display: inline-block;
+          background: url(/img/facebook_icon_bg.png) no-repeat;
+          width: 30px;
+          height: 30px;
+          vertical-align: middle;
+          margin-left: 22px;
+
+          @include breakpoint($sm){
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  &__text {
+    background: #fff;
+    color: #000;
+    text-align: center;
+    font: 16px $font;
+    box-sizing: border-box;
+    padding: {
+      left: 60px;
+      right: 60px;
+      top: 50px;
+      bottom: 75px;
+    };
+    position: relative;
+
+    @include breakpoint($sm){
+      padding: {
+        left: 25px;
+        right: 25px;
+        top: 30px;
+      };
+    }
+
+    @include breakpoint($xs){
+      font-size: 14px;
+    }
+
+    &__layout {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        display: block;
+        background: url(/img/action_text_bg.png) center center no-repeat;
+        height: 86px;
+        bottom: 0;
+      }
+
+      &.expanded::after {
+        visibility: hidden;
+      }
+    }
+
+    &__expand {
+      display: block;
+      position: absolute;
+      width: 24px;
+      height: 13px;
+      background: url(/img/action_text_expand_bg.png) no-repeat;
+      bottom: 31px;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    &__layout.expanded + &__expand {
+      visibility: hidden;
+    }
+  }
+}

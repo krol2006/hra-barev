@@ -1,0 +1,204 @@
+.gifts {
+  background: #ed7103;
+  overflow: hidden;
+
+  &__list {
+    display: flex;
+    flex-flow: row wrap;
+    box-shadow: 0 0 11px 1px rgba(0, 0, 0, 0.75);
+    margin-bottom: 5px;
+  }
+
+  &__item {
+    flex: 0 1 33.3333%;
+    width: 33.3333%;
+    background: #e6e6e6;
+    background: -moz-linear-gradient(top,  #e6e6e6 0%, #ffffff 100%);
+    background: -webkit-linear-gradient(top,  #e6e6e6 0%,#ffffff 100%);
+    background: linear-gradient(to bottom,  #e6e6e6 0%,#ffffff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e6e6', endColorstr='#ffffff',GradientType=0 );
+    box-sizing: border-box;
+    border-right: 2px solid #e6e6e6;
+
+    @include breakpoint($sm){
+      flex: 0 1 50%;
+      width: 50%;
+    }
+
+    @include breakpoint($xs){
+      width: 100%;
+      flex: 0 1 100%;
+    }
+
+    &:nth-of-type(3n+3){
+      border-right: 0;
+    }
+
+    &__title {
+      height: 190px;
+      box-sizing: border-box;
+      padding: {
+        top: 65px;
+        left: 48px;
+      }
+      font: 18px $fontBold;
+      color: #000;
+
+      @include breakpoint($xs){
+        height: 135px;
+        padding: {
+          top: 30px;
+          left: 0;
+        };
+        text-align: center;
+      }
+
+      span {
+        display: block;
+        color: #808080;
+        font: 16px $font;
+        margin: {
+          top: 10px;
+        };
+        line-height: 1;
+      }
+    }
+
+    &__image {
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: auto;
+        max-height: 100%;
+      }
+    }
+
+    &__voting {
+      margin-top: 17px;
+
+      &__list {
+        display: flex;
+        justify-content: center;
+      }
+
+      &__item {
+        display: inline-block;
+        width: 17px;
+        height: 17px;
+        background: url(/img/voting_bg.png) no-repeat;
+        margin-right: 5px;
+        cursor: pointer;
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+    }
+
+    &__buy {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      box-sizing: border-box;
+      padding: {
+        right: 28px;
+        left: 47px;
+      };
+      margin: {
+        top: 43px;
+        bottom: 34px;
+      };
+
+      @include breakpoint($md){
+        padding: {
+          left: 10px;
+          right: 10px;
+        };
+      }
+
+      @include breakpoint($sm){
+        padding: {
+          left: 25px;
+          right: 25px;
+        };
+      }
+
+      a {
+        display: block;
+        background: #ed7103 url(/img/cart_btn_bg.png) left 30px center no-repeat;
+        min-width: 165px;
+        height: 60px;
+        font: 23px $fontBoldItalic;
+        text-decoration: none;
+        color: #fff;
+        text-indent: 64px;
+        line-height: 60px;
+      }
+    }
+
+    &__price {
+      color: #ed7103;
+      font: 30px $fontBold;
+
+      @include breakpoint($md){
+        font-size: 24px;
+      }
+
+      span {
+        display: block;
+        color: #000;
+        font: 16px $font;
+
+        @include breakpoint($md){
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  &__content {
+    background: #ed7103;
+    overflow: hidden;
+
+    &__title {
+      font: 68px $fontBlackItalic;
+      text-align: center;
+      margin: {
+        top: 80px;
+        bottom: 80px;
+      };
+      line-height: 1;
+
+      @include breakpoint($xs){
+        margin: {
+          top: 30px;
+          bottom: 30px;
+        };
+        font-size: 48px;
+      }
+    }
+
+    &__text {
+      column-count: 2;
+      column-gap: 80px;
+
+      @include breakpoint($xs){
+        column-count: 1;
+        padding: 0 10px;
+      }
+
+      p {
+        &:nth-of-type(odd){
+          font: 23px $fontBoldItalic;
+          margin-bottom: 45px;
+        }
+
+        &:nth-of-type(even){
+          font: 18px $font;
+          margin-bottom: 75px;
+        }
+      }
+    }
+  }
+}

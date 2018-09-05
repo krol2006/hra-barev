@@ -1,0 +1,265 @@
+.footer {
+  height: 480px;
+  background: #000;
+  box-sizing: border-box;
+  padding: {
+    top: 75px;
+  };
+
+  @include breakpoint($sm){
+    padding-top: 45px;
+  }
+
+  @include breakpoint($xs){
+    height: auto;
+    position: relative;
+  }
+
+  &__layout {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+
+    @include breakpoint($xs){
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    > * {
+      flex: 0 1 450px;
+
+      @include breakpoint($xs){
+        flex: 0 1 auto;
+        width: 100%;
+      }
+    }
+  }
+
+  &--right {
+    @include breakpoint($sm){
+      box-sizing: border-box;
+      padding-right: 50px;
+    }
+
+    @include breakpoint($xs){
+      padding-right: 0;
+    }
+  }
+
+  &__menu {
+    position: relative;
+
+    @include breakpoint($xs){
+      margin-top: 140px;
+    }
+
+    &__list {
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: flex-start;
+      max-height: 240px;
+
+      @include breakpoint($sm){
+        max-height: 100%;
+      }
+
+      @include breakpoint($xs){
+        flex-flow: column wrap;
+        max-height: 220px;
+      }
+    }
+
+    &__item {
+      text-align: center;
+      margin: {
+        bottom: 40px;
+      };
+
+      @include breakpoint($sm){
+        margin-bottom: 15px;
+      }
+
+      @include breakpoint($xs){
+        flex: 0 1 33%;
+        width: 50%;
+        margin-bottom: 40px;
+      }
+
+      &:last-of-type {
+        margin: {
+          bottom: 0;
+        };
+
+        @include breakpoint($sm){
+          margin-bottom: 15px;
+        }
+      }
+    }
+
+    &__link {
+      color: #666666;
+      text-decoration: none;
+
+      @include breakpoint($sm){
+        font-size: 24px;
+      }
+
+      @include breakpoint($xs){
+        font-size: 14px;
+      }
+    }
+
+    &__buttons {
+      position: absolute;
+      right: 0;
+      bottom: 32px;
+
+      @include breakpoint($sm){
+        width: 180px;
+        position: static;
+        margin: {
+          left: auto;
+          right: auto;
+        };
+      }
+
+      @include breakpoint($xs){
+        width: 260px;
+        margin-top: 20px;
+      }
+
+      &__link {
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: #656565;
+
+        @include breakpoint($sm){
+          font-size: 18px;
+        }
+
+        @include breakpoint($xs){
+          font-size: 14px;
+        }
+      }
+    }
+
+    &__button {
+      height: 48px;
+      min-width: 180px;
+
+      &:first-of-type {
+        background: #cccccc;
+      }
+
+      &:last-of-type {
+        background: #666666;
+
+        .footer__menu__buttons__link {
+          color: #000;
+        }
+      }
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    @include breakpoint($xs){
+      margin-top: 60px;
+      margin-bottom: 60px;
+      justify-content: space-around;
+    }
+
+    &__link {
+      text-align: center;
+      text-decoration: none;
+      color: #ed7103;
+
+      @include breakpoint($sm){
+        font-size: 17px;
+      }
+
+      @include breakpoint($xs){
+        font-size: 14px;
+      }
+
+      img {
+        display: block;
+        margin: {
+          left: auto;
+          right: auto;
+        };
+      }
+
+      span {
+        display: block;
+        margin: {
+          top: 23px;
+        };
+
+      }
+    }
+  }
+
+  &__socials {
+    margin-top: 30px;
+
+    @include breakpoint($xs){
+      position: absolute;
+      top: 40px;
+      left: 0;
+      right: 0;
+      margin-top: 0;
+      width: 100%;
+    }
+
+    &__title {
+      color: #666666;
+      text-align: center;
+    }
+
+    &__list {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      margin: {
+        top: 22px;
+      };
+    }
+
+    &__item {
+      height: 58px;
+      width: 50px;
+      background: url(/img/socials_bg.png) left bottom no-repeat;
+      margin: {
+        right: 100px;
+      };
+
+      @include breakpoint($xs){
+        margin-right: 50px;
+      }
+
+      &:nth-of-type(2) {
+        background-position: center bottom;
+      }
+
+      &:last-of-type {
+        background-position: right bottom;
+        margin: {
+          right: 0;
+        };
+      }
+    }
+
+    &__link {
+      display: block;
+      height: 100%;
+    }
+  }
+}

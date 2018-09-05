@@ -1,0 +1,50 @@
+.registration {
+  background: #ed7103;
+  overflow: hidden;
+  min-height: 100vh;
+
+  &__layout {
+    background: #fff;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.75);
+    width: 800px;
+    margin: {
+      left: auto;
+      right: auto;
+      top: 65px;
+    };
+  }
+
+  &__title {
+    height: 80px;
+    background: #000 url(/img/login_icon_bg.png) left 24px center no-repeat;
+    text-align: center;
+    color: #fff;
+    font: 30px $fontBoldItalic;
+    line-height: 80px;
+  }
+
+  &__socials {
+    min-height: 102px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #e8e8e8;
+
+    > * {
+      margin-bottom: 10px;
+      text-align: center;
+      color: #fff;
+      font: 18px $fontBoldItalic;
+      background: #475993 url(/img/facebook_icon_bg.png) left 15px center no-repeat;
+      display: block;
+      height: 50px;
+      width: 350px;
+      text-decoration: none;
+      line-height: 50px;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

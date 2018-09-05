@@ -1,0 +1,188 @@
+.about {
+  &__list {
+    background: #ed7103;
+    box-sizing: border-box;
+    padding: {
+      top: 77px;
+      bottom: 77px;
+    }
+
+    &__layout {
+      height: 100%;
+      display: flex;
+      flex-flow: row wrap;
+
+      @include breakpoint($xs){
+        flex-flow: column nowrap;
+        align-items: center;
+      }
+    }
+
+    &__item {
+      width: 50%;
+      display: flex;
+      flex-flow: row nowrap;
+      min-height: 180px;
+      margin: {
+        bottom: 60px;
+      }
+
+      @include breakpoint($xs){
+        width: 100%;
+        flex-flow: column nowrap;
+      }
+
+      &:last-of-type,
+      &:nth-last-of-type(2) {
+        margin-bottom: 0;
+      }
+
+      &--left {
+        min-width: 240px;
+        display: flex;
+        justify-content: flex-start;
+        flex-flow: column nowrap;
+        align-items: center;
+
+        p {
+          font: 23px $fontBoldItalic;
+          margin: {
+            top: 11px;
+          }
+          line-height: 1;
+        }
+      }
+
+      &--right {
+        @include breakpoint($xs){
+          text-align: center;
+          margin-top: 40px;
+        }
+
+        p {
+          font: 16px $fontBoldItalic;
+          margin: {
+            bottom: 19px;
+          }
+          line-height: 1;
+
+          &:last-of-type {
+            margin: {
+              bottom: 0;
+            }
+          }
+        }
+      }
+    }
+
+    &__text {
+      box-sizing: border-box;
+      padding: {
+        top: 75px;
+        bottom: 83px;
+      }
+      background: #f2f2f2;
+      background: -moz-linear-gradient(top, #f2f2f2 0%, #ffffff 100%);
+      background: -webkit-linear-gradient(top, #f2f2f2 0%, #ffffff 100%);
+      background: linear-gradient(to bottom, #f2f2f2 0%, #ffffff 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(
+                      startColorstr='#f2f2f2',
+                      endColorstr='#ffffff',
+                      GradientType=0
+      );
+
+      &__title {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        font: 30px $fontBoldItalic;
+        margin: {
+          bottom: 70px;
+        }
+        line-height: 1;
+
+        img {
+          margin: {
+            right: 40px;
+          }
+        }
+      }
+
+      &__item {
+        display: flex;
+        flex-flow: row nowrap;
+        margin: {
+          bottom: 75px;
+        }
+
+        &:last-of-type {
+          margin: {
+            bottom: 0;
+          }
+        }
+
+        &--left {
+          font: 19px $fontBoldItalic;
+          min-width: 430px;
+        }
+
+        &--right {
+          font: 16px $font;
+        }
+      }
+    }
+  }
+
+  &__text {
+    box-sizing: border-box;
+    padding: {
+      top: 75px;
+      bottom: 83px;
+    };
+    background: #f2f2f2;
+    background: -moz-linear-gradient(top,  #f2f2f2 0%, #ffffff 100%);
+    background: -webkit-linear-gradient(top,  #f2f2f2 0%,#ffffff 100%);
+    background: linear-gradient(to bottom,  #f2f2f2 0%,#ffffff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#ffffff',GradientType=0 );
+
+    &__title {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      font: 30px $fontBoldItalic;
+      margin: {
+        bottom: 70px;
+      };
+      line-height: 1;
+
+      img {
+        margin: {
+          right: 40px;
+        };
+      }
+    }
+
+    &__item {
+      display: flex;
+      flex-flow: row nowrap;
+      margin: {
+        bottom: 75px;
+      };
+
+      &:last-of-type {
+        margin: {
+          bottom: 0;
+        };
+      }
+
+      &--left {
+        font: 19px $fontBoldItalic;
+        min-width: 430px;
+      }
+
+      &--right {
+        font: 16px $font;
+      }
+    }
+  }
+}

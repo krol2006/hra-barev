@@ -1,0 +1,699 @@
+.calendar {
+  background: #ed7103;
+  overflow: hidden;
+  padding-top: 40px;
+
+  &__item {
+    box-shadow: 0 0 11px 1px rgba(0,0,0,0.75);
+
+    &__title {
+      height: 80px;
+      background: #048490;
+      color: #fff;
+      font: 23px $fontBoldItalic;
+      box-sizing: border-box;
+      padding-left: 44px;
+      margin: {
+        top: 30px;
+      };
+      line-height: 80px;
+
+      @include breakpoint($xs){
+        padding-left: 0;
+        text-align: center;
+      }
+
+      &--yellow {
+        background: #eda203;
+      }
+
+      &--red {
+        background: #ed0f03;
+      }
+    }
+
+    &__layout {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      height: 130px;
+      max-width: 100%;
+
+      @include breakpoint($xs){
+        height: auto;
+        flex-flow: column nowrap;
+      }
+    }
+
+    &__date {
+      flex: 0 1 20%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      font: 47px $fontBlack;
+      color: #ed7103;
+
+      @include breakpoint($sm){
+        font-size: 35px;
+      }
+
+      @include breakpoint($xs){
+        min-height: 50px;
+      }
+
+      span {
+        display: block;
+        font: 16px $fontBold;
+        text-align: center;
+        line-height: 1;
+
+        @include breakpoint($xs){
+          display: inline-block;
+          padding-left: 5px;
+        }
+      }
+    }
+
+    &__list {
+      display: flex;
+      flex-flow: column wrap;
+      flex: 0 1 80%;
+
+      @include breakpoint($xs){
+        flex: 0 1 100%;
+        width: 100%;
+      }
+
+      &__item {
+        width: 50%;
+        height: 33.3333%;
+        display: flex;
+        justify-content: space-between;
+        background: #eaeaea;
+        background: -moz-linear-gradient(top,  #eaeaea 0%, #ffffff 100%);
+        background: -webkit-linear-gradient(top,  #eaeaea 0%,#ffffff 100%);
+        background: linear-gradient(to bottom,  #eaeaea 0%,#ffffff 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaeaea', endColorstr='#ffffff',GradientType=0 );
+        -webkit-box-shadow: inset 0 -2px 20px 0 rgba(0, 0, 0, 0.1);
+        box-shadow: inset 0 -2px 20px 0 rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+        padding: {
+          left: 23px;
+          right: 30px;
+        }
+
+        @include breakpoint($md){
+          padding: {
+            left: 10px;
+            right: 10px;
+          };
+        }
+
+        @include breakpoint($xs){
+          width: 100%;
+        }
+
+        span {
+          font: 16px $font;
+          line-height: 43px;
+
+          @include breakpoint($xs){
+            font-size: 14px;
+          }
+
+          &:last-of-type {
+            color: #ed7103;
+          }
+        }
+      }
+    }
+
+    &__buttons {
+      flex: 0 1 20%;
+      display: flex;
+      flex-flow: column nowrap;
+
+      a {
+        display: flex;
+        height: 50%;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        font: 23px $fontBoldItalic;
+        text-decoration: none;
+        line-height: 1;
+
+        @include breakpoint($md){
+          font-size: 18px;
+        }
+
+        @include breakpoint($sm){
+          font-size: 15px;
+        }
+
+        @include breakpoint($xs){
+          height: 50px;
+        }
+
+        &:first-of-type {
+          background: #000;
+          color: #ed7103;
+        }
+
+        &:last-of-type {
+          color: #fff;
+          background: #ed7103;
+        }
+      }
+    }
+  }
+
+  &__filter {
+    -webkit-box-shadow: 0 0 11px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 0 0 11px 1px rgba(0, 0, 0, 0.75);
+
+    > .container {
+      @include breakpoint($md){
+        padding: {
+          left: 0;
+          right: 0;
+        };
+      }
+    }
+
+    &__titlebar {
+      height: 80px;
+      background: #000 url(/img/calendar_filter_titlebar_bg.png) left 22px center no-repeat;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      box-sizing: border-box;
+      padding: {
+        left: 102px;
+      };
+      position: relative;
+      z-index:0;
+
+      @include breakpoint($xs){
+        height: auto;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 0;
+        background-image: none;
+      }
+
+      &__options {
+        display: flex;
+        flex-flow: row nowrap;
+        height: 100%;
+        align-items: center;
+
+        @include breakpoint($xs){
+          height: 80px;
+        }
+      }
+
+      &__toggle {
+        margin-right: 24px;
+
+        @include breakpoint($xs){
+          margin-right: 0;
+        }
+
+        a {
+          display: inline-block;
+          font: 18px $font;
+          text-decoration: none;
+          color: #fff;
+          line-height: 80px;
+
+          &::after {
+            content: "";
+            width: 22px;
+            height: 13px;
+            display: inline-block;
+            background: url(/img/calendar_toggle_bg.png) no-repeat;
+            margin: {
+              left: 27px;
+            };
+            position: relative;
+            top: 2px;
+            transition: transform .2s;
+          }
+        }
+
+        &.rotated a::after {
+          transform: rotate(180deg);
+          top: 0;
+        }
+      }
+
+      &__select {
+        min-width: 80px;
+        margin-right: 65px;
+
+        &:last-of-type {
+          @include breakpoint($xs){
+            margin-right: 0;
+          }
+        }
+
+        input {
+          display: none;
+        }
+
+        &__placeholder {
+          font: 18px $font;
+          color: #fff;
+          padding: 0;
+          line-height: 32px;
+        }
+
+        &__control {
+          background-color: transparent;
+          border: 0;
+        }
+
+        &__arrow {
+          width: 13px;
+          height: 18px;
+          background: url(/img/calendar_filter_select_bg.png) no-repeat;
+          border: 0;
+          padding-right: 0;
+          transform: none;
+          margin-top: 0 !important;
+
+          &__zone {
+            padding-right: 0;
+          }
+        }
+      }
+    }
+
+    &__content {
+      background: #fff;
+      position: relative;
+      max-height: 0;
+      z-index: 1;
+      transition: all .2s;
+      overflow: hidden;
+
+      &.opened {
+        max-height: 1000px;
+        overflow: visible;
+      }
+    }
+
+    &__section {
+      display: flex;
+      flex-flow: row nowrap;
+      box-sizing: border-box;
+      padding: {
+        bottom: 6px;
+      };
+
+      @include breakpoint($xs){
+        flex-flow: column nowrap;
+        align-items: center;
+      }
+
+      &:first-of-type {
+        padding-top: 40px;
+      }
+
+      &__title {
+        font: 18px $font;
+        box-sizing: border-box;
+        padding-left: 35px;
+        min-width: 235px;
+        line-height: 1;
+
+        @include breakpoint($xs){
+          min-width: 0;
+          padding-left: 0;
+          margin-bottom: 30px;
+        }
+      }
+
+      &__list {
+        display: flex;
+        flex-flow: row wrap;
+
+        @include breakpoint($xs){
+          box-sizing: border-box;
+          padding-left: 20px;
+        }
+      }
+
+      &__item {
+        margin: {
+          bottom: 36px;
+        };
+
+        &--checkbox {
+          flex: 0 1 245px;
+          min-width: 245px;
+
+          input {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            width: 0;
+            height: 0;
+            opacity: 0;
+          }
+
+          label {
+            font: 16px $font;
+            cursor: pointer;
+            white-space: nowrap;
+            line-height: 1;
+
+            @include breakpoint($md){
+              white-space: normal;
+            }
+
+            &::before {
+              content: "";
+              display: inline-block;
+              box-sizing: border-box;
+              width: 22px;
+              height: 22px;
+              border: 1px solid #cccccc;
+              margin: {
+                right: 15px;
+              };
+              vertical-align: middle;
+            }
+          }
+
+          input:checked + label::before {
+            background: url(/img/calendar_filter_checkbox_bg.jpg) center center no-repeat;
+          }
+        }
+
+        &--date {
+          position: relative;
+          top: -12px;
+          margin-right: 25px;
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+
+          label {
+            font: 16px $font;
+            margin-right: 15px;
+            position: relative;
+            cursor: pointer;
+            top: -2px;
+          }
+
+          input {
+            height: 42px;
+            width: 145px;
+            box-sizing: border-box;
+            border: 1px solid #cccccc;
+            padding: {
+              left: 12px;
+            };
+            color: #666666;
+            font: 16px $font;
+            background: url(/img/calendar_date_input_bg.png) right 11px center no-repeat;
+
+            &::-webkit-input-placeholder, &::-moz-placeholder {
+              color: #666666;
+              font: 16px $font;
+            }
+          }
+        }
+
+        &--slider {
+          min-width: 400px;
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+
+          .rangeslider {
+            &__handle {
+              width: 18px !important;
+              height: 18px !important;
+              background: #000 !important;
+              top: 50%;
+              transform: translateY(-50%);
+              box-shadow: none !important;
+              border: none !important;
+            }
+
+            &__track {
+              height: 3px !important;
+              background: #000 !important;
+              border: 0 !important;
+              top: 15px !important;
+              border-radius: 2px !important;
+
+              &--highlighted {
+                display: none;
+              }
+            }
+
+            &__min, &__max {
+              font: 16px $font;
+
+              &::after {
+                content: "Kč";
+                padding-left: 5px;
+              }
+            }
+
+            &__min {
+              margin-right: 15px;
+            }
+
+            &__max {
+              margin-left: 15px;
+            }
+          }
+        }
+      }
+    }
+
+    &__select {
+      height: 42px;
+      box-sizing: border-box;
+      border: 1px solid #cccccc;
+      width: 205px;
+
+      &__placeholder {
+        outline: none;
+        color: #666666;
+        padding-left: 15px;
+        font: 16px $font;
+        line-height: 40px !important;
+      }
+
+      &__control {
+        outline: none;
+        border: none;
+        height: 100%;
+      }
+
+      &__arrow {
+        background: url(/img/calendar_filter_arrow_bg.png) no-repeat;
+        width: 12px;
+        height: 7px;
+        border: none;
+        transform: translateY(-50%);
+        margin-top: 0;
+        top: 50%;
+
+        &__zone {
+          width: 50px;
+          height: 40px;
+          background: #000;
+          padding: 0;
+        }
+      }
+    }
+
+    &__close {
+      position: absolute;
+      right: 26px;
+      bottom: 28px;
+
+      a {
+        font: 18px $font;
+        display: inline-block;
+        padding-right: 33px;
+        background: url(/img/calendar_filter_close_bg.png) right center no-repeat;
+        text-decoration: none;
+        color: #000;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &__panel {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: {
+      top: 35px;
+    }
+
+    @include breakpoint($xs){
+      box-sizing: border-box;
+      padding: 0 20px;
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+    }
+  }
+
+  &__pages {
+    font: 12px $font;
+    line-height: 1;
+
+    @include breakpoint($xs){
+      margin-bottom: 15px;
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+
+    @include breakpoint($xs){
+      flex-flow: column nowrap;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    &__text {
+      font: 12px $font;
+      margin: {
+        right: 15px;
+      };
+
+      @include breakpoint($xs){
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+    }
+
+    &__select {
+      height: 25px;
+      width: 45px;
+      box-sizing: border-box;
+      margin-right: 7px;
+
+      @include breakpoint($xs){
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+
+      input {
+        display: none;
+      }
+
+      &__placeholder {
+        height: 25px;
+        background: transparent;
+        box-sizing: border-box;
+        color: #000;
+        padding-left: 7px;
+        font: 12px $font;
+        border: 1px solid #000;
+        line-height: 25px;
+      }
+
+      &__control {
+        height: 25px;
+        border: 0;
+        background: transparent;
+        box-sizing: border-box;
+      }
+
+      &__arrow {
+        background: url(/img/calendar_pagination_select_bg.png) no-repeat;
+        border: none;
+        box-shadow: none;
+        width: 10px;
+        height: 7px;
+        transform: none;
+        margin-top: 0 !important;
+
+        &__zone {
+          top: -4px;
+        }
+      }
+    }
+
+    &__list {
+      display: flex;
+      flex-flow: row nowrap;
+    }
+
+    &__item {
+      width: 25px;
+      height: 25px;
+      box-sizing: border-box;
+      margin-right: 7px;
+      border: 1px solid #000;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      a {
+        display: block;
+        height: 100%;
+        color: #000;
+        font: 12px $font;
+        text-decoration: none;
+        text-align: center;
+        line-height: 25px;
+      }
+
+      &--first a {
+        background: url(/img/calendar_pagination_first_bg.png) center center no-repeat;
+      }
+
+      &--prev a {
+        background: url(/img/calendar_pagination_prev_bg.png) center center no-repeat;
+      }
+
+      &--active a {
+        background: #000;
+        color: #ed7103;
+      }
+
+      &--next a {
+        background: url(/img/calendar_pagination_next_bg.png) center center no-repeat;
+      }
+
+      &--last a {
+        background: url(/img/calendar_pagination_last_bg.png) center center no-repeat;
+      }
+    }
+  }
+
+  &__text {
+    text-align: center;
+    font: 23px $fontBoldItalic;
+    margin: {
+      top: 55px;
+      bottom: 94px;
+    };
+    line-height: 1;
+
+    @include breakpoint($xs){
+      font-size: 18px;
+    }
+  }
+}

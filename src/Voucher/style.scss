@@ -1,0 +1,244 @@
+.voucher {
+  &__layout {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.75);
+    margin-bottom: 65px;
+    margin-top: 65px;
+  }
+
+  &__content {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 205px;
+
+    @include breakpoint($sm){
+      height: auto;
+      flex-flow: column nowrap;
+      align-items: center;
+    }
+  }
+
+  &--left, &--right {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #929292;
+  }
+
+  &--left {
+    min-width: 900px;
+    background: linear-gradient(45deg, #060606 20%, #303030 100%);
+    position: relative;
+
+    @include breakpoint($md){
+      min-width: 780px;
+    }
+
+    @include breakpoint($sm){
+      min-width: 100%;
+      height: 200px;
+    }
+
+    @include breakpoint($xs){
+      flex-flow: column nowrap;
+      align-items: center;
+      height: auto;
+      text-align: center;
+      box-sizing: border-box;
+      padding: 10px 0;
+    }
+
+    &::before {
+      content: attr(data-percentage);
+      display: block;
+      position: absolute;
+      height: 49px;
+      width: 90px;
+      background: #ed7103;
+      right: 0;
+      top: 0;
+      font: 23px $fontBoldItalic;
+      color: #000;
+      text-align: center;
+      line-height: 49px;
+    }
+  }
+
+  &--right {
+    background: #fff;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+
+    @include breakpoint($sm){
+      padding-bottom: 10px;
+    }
+  }
+
+  &__image {
+    margin-right: 55px;
+
+    @include breakpoint($md){
+      margin-right: 35px;
+    }
+
+    @include breakpoint($xs){
+      margin-right: 0;
+    }
+  }
+
+  &__name {
+    font: 23px $fontBoldItalic;
+    color: #fff;
+    max-width: 240px;
+    margin-right: 60px;
+
+    @include breakpoint($md){
+      margin-right: 30px;
+    }
+
+    @include breakpoint($xs){
+      margin-right: 0;
+    }
+  }
+
+  &__price {
+    font: 68px $fontBoldItalic;
+    color: #ed7103;
+    margin-right: 66px;
+
+    @include breakpoint($md){
+      margin-right: 35px;
+    }
+
+    @include breakpoint($xs){
+      margin-right: 0;
+    }
+  }
+
+  &__subprice {
+    color: #666666;
+    font: 16px $font;
+
+    span {
+      display: block;
+      text-align: center;
+      font: 30px $fontBoldItalic;
+    }
+  }
+
+  &__buy {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+
+    .react-numeric-input {
+      width: 147px;
+      display: flex;
+      justify-content: center;
+
+      input {
+        border: none !important;
+        padding: 0 !important;
+        max-width: 100%;
+        text-align: center;
+        font: 47px $fontBoldItalic;
+      }
+
+      b {
+        position: absolute;
+        width: 28px !important;
+        height: 28px !important;
+        border: 3px solid #999999 !important;
+        border-radius: 30px !important;
+        background: transparent !important;
+        cursor: pointer !important;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -ms-flex-align: center;
+        align-items: center;
+        top: 50% !important;
+        -webkit-transform: translateY(-50%) !important;
+        -ms-transform: translateY(-50%) !important;
+        transform: translateY(-50%) !important;
+
+        i {
+          display: none !important;
+        }
+
+        &::before {
+          font: 30px $fontBold;
+          color: #999999;
+          line-height: 1;
+        }
+
+        &:first-of-type {
+          right: 0 !important;
+
+          &::before {
+            content: "+";
+          }
+        }
+
+        &:last-of-type {
+          left: 0;
+
+          &::before {
+            content: "-";
+          }
+        }
+      }
+    }
+
+    > a {
+      font: 18px $fontBoldItalic;
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+      display: block;
+      width: 147px;
+      height: 50px;
+      background: #ed7103;
+      margin-top: 11px;
+      line-height: 50px;
+    }
+
+    > p {
+      color: #999999;
+      font: 16px $font;
+      margin-top: 10px;
+      line-height: 1;
+
+      span {
+        font: 16px $fontBold;
+        color: #ed7103;
+      }
+    }
+  }
+
+  &__info {
+    background: #e6e6e6;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 0 25px;
+    min-height: 79px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #929292;
+    color: #808080;
+    font: 14px $font;
+
+    a {
+      color: #ed7103;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
